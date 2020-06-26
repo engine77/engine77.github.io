@@ -486,6 +486,8 @@ body {
   padding-left: 28px;
   border: none;
   width: 175px;
+  height: 42px;
+  border-radius: 10px 0 0 10px;
 }
 
 .searchBox button {
@@ -1622,7 +1624,9 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
     border-radius: 6px;
-    background: #ffffff;
+  }
+  .twoboxes input {
+    width: 100%;
   }
   .twoboxes .subsc input,
   .twoboxes .subsc button {

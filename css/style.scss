@@ -380,7 +380,8 @@ body {
         padding-left: 28px;
         border: none;
         width: 175px;
-
+        height: 42px;
+        border-radius: 10px 0 0 10px;
     }
 
     button {
@@ -1421,9 +1422,11 @@ body {
 
             flex-direction: row;
             border-radius: 6px;
-            background: #ffffff;
+            // background: #ffffff;
         }
-
+        input{
+            width: 100%;
+        }
         .subsc input,
         .subsc button {
             border-radius: 0px;
