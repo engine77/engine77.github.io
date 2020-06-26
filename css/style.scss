@@ -370,17 +370,17 @@ body {
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
-    background: #ffffff;
+    // background: #ffffff;
     // width: 340px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     input {
-        padding-left: 28px;
+        padding-left: 38px;
         border: none;
         width: 175px;
-        height: 42px;
+        height: 43px;
         border-radius: 10px 0 0 10px;
     }
 
@@ -403,7 +403,7 @@ body {
     &:after {
         content: '';
         position: absolute;
-        left: 9px;
+        left: 17px;
         top: 50%;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -1004,7 +1004,7 @@ body {
         position: relative;
         width: 371px;
         height: 164px;
-        padding: 0 10px 10px 0;
+        margin: 0 10px 10px 0;
 
         img {
             display: inline-block;
@@ -1034,7 +1034,8 @@ body {
         justify-content: space-between;
 
         .box_pop {
-            padding: 0 0px 17px 0;
+            margin: 0 0px 17px 0;
+           
         }
     }
 }
