@@ -8,6 +8,10 @@ html {
   padding-right: 15px;
 }
 
+input:focus {
+  outline: none;
+}
+
 a {
   outline: none !important;
   text-decoration: none;
