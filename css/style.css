@@ -1581,9 +1581,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1600,10 +1600,15 @@ body {
   border-radius: 6px;
 }
 
+.twoboxes .subsc label {
+  width: 100%;
+}
+
 .twoboxes .subsc input {
   height: 45px;
   border: none;
   padding: 0 24px;
+  width: 80%;
 }
 
 .twoboxes .subsc button {
@@ -1624,7 +1629,7 @@ body {
             flex-direction: row;
     border-radius: 6px;
   }
-  .twoboxes input {
+  .twoboxes .subsc input {
     width: 100%;
   }
   .twoboxes .subsc input,

@@ -1381,7 +1381,7 @@ body {
         form {
             background: white;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             flex-direction: column;
             max-width: 420px;
             width: 100%;
@@ -1397,12 +1397,15 @@ body {
         button {
             border-radius: 6px;
         }
-
+        label{
+            width: 100%;
+            
+        }
         input {
             height: 45px;
             border: none;
             padding: 0 24px;
-            // width: 100%;
+            width: 80%;
         }
 
         button {
@@ -1425,7 +1428,7 @@ body {
             border-radius: 6px;
             // background: #ffffff;
         }
-        input{
+        .subsc input{
             width: 100%;
         }
         .subsc input,
