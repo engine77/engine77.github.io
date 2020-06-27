@@ -114,51 +114,72 @@ swiper3.on('click', function (e) {
 
 });
 
-
-document.querySelector(".header_mobile_button").addEventListener("click", function (e) {
-    let mobmenu = document.querySelector(".header_mobile");
-    let mobbg = document.querySelector(".overflow_bg");
-    if (document.body.clientWidth < 992) {
-        document.body.classList.toggle("overflowBody");
-        mobbg.style.display="block";
-        document.querySelector(".header_mobile_button").classList.toggle("animateX")
-        mobmenu.classList.toggle("active_menu");
-        if (e.target.closest(".overflow_bg")){            
-            mobbg.style.display="none";           
+let button_for_Ul_menu = document.querySelector(".button_for_Ul_menu");
+if (button_for_Ul_menu) {
+    button_for_Ul_menu.addEventListener("click", e => {
+        if (document.body.clientWidth < 768) {
+            let x = document.querySelector(".ul_top");
+            x.style.display = x.style.display === 'block' ? 'none' : 'block';
         }
-    }
-    
-});
+
+    })
+}
+
+let catalogMenu = document.querySelector(".catalogMenu");
+if (catalogMenu) {
+    catalogMenu.addEventListener("click", e => {
+
+        let x = document.querySelector(".menuformenu");
+        x.style.display = x.style.display === 'block' ? 'none' : 'block';
+
+
+    })
+}
+
+// document.querySelector(".header_mobile_button").addEventListener("click", function (e) {
+//     let mobmenu = document.querySelector(".header_mobile");
+//     let mobbg = document.querySelector(".overflow_bg");
+//     if (document.body.clientWidth < 992) {
+//         document.body.classList.toggle("overflowBody");
+//         mobbg.style.display="block";
+//         document.querySelector(".header_mobile_button").classList.toggle("animateX")
+//         mobmenu.classList.toggle("active_menu");
+//         if (e.target.closest(".overflow_bg")){            
+//             mobbg.style.display="none";           
+//         }
+//     }
+
+// });
 
 
 
-    let tabsButtons = document.querySelector(".tabsbuttons");
-    if(tabsButtons){
-        tabsButtons.addEventListener("click", e=>{
-            if (e.target.closest('.tabsbuttons').children.length == document.querySelector(".tabs_content").children.length) {
-                e.target.closest('.tabsbuttons').querySelector(".activeButton").classList.remove("activeButton");
-                e.target.closest('.tabsbuttons button').classList.add("activeButton");
-        
-                let xx = e.target.closest('.tabsbuttons button').classList[0];
-                let y = parseInt(xx.match(/\d+/));
-        
-                document.querySelector(".tabs_content").querySelector(".activeTab").classList.remove("activeTab");
-                document.querySelector(".tabs_content").querySelector(".tabcont" + y).classList.add("activeTab");
-        
-            }
-        });
-    }
-   
-   
-  
+let tabsButtons = document.querySelector(".tabsbuttons");
+if (tabsButtons) {
+    tabsButtons.addEventListener("click", e => {
+        if (e.target.closest('.tabsbuttons').children.length == document.querySelector(".tabs_content").children.length) {
+            e.target.closest('.tabsbuttons').querySelector(".activeButton").classList.remove("activeButton");
+            e.target.closest('.tabsbuttons button').classList.add("activeButton");
+
+            let xx = e.target.closest('.tabsbuttons button').classList[0];
+            let y = parseInt(xx.match(/\d+/));
+
+            document.querySelector(".tabs_content").querySelector(".activeTab").classList.remove("activeTab");
+            document.querySelector(".tabs_content").querySelector(".tabcont" + y).classList.add("activeTab");
+
+        }
+    });
+}
+
+
+
 
 
 
 let price_and_total = document.querySelector(".price_and_total .number");
-if(price_and_total){
+if (price_and_total) {
     price_and_total.addEventListener("click", function (e) {
-        let x = document.querySelector(".price_and_total .number input");    
-        if (e.target.closest('.minus')&& parseInt(x.value) > 1) {
+        let x = document.querySelector(".price_and_total .number input");
+        if (e.target.closest('.minus') && parseInt(x.value) > 1) {
             parseInt(x.value--)
         }
         if (e.target.closest('.plus')) {
