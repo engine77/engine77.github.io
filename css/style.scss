@@ -371,6 +371,7 @@ body {
 
     .container:first-child {
         flex-flow: row wrap;
+        justify-content: space-around;
     }
 
     .container {
@@ -532,8 +533,8 @@ body {
 }
 
 .telephone {
-    padding: 15px 0;
-    padding-left: 31px;
+    padding: 10px 0 10px 31px;
+    flex-basis: 50%;
 
     h2 {
         color: #ffffff;
@@ -569,7 +570,12 @@ body {
     }
 
     @media screen and (min-width: 768px) {
-        flex-basis: auto
+        flex-basis: 27%;
+    }
+
+    @media screen and (min-width: 950px) {
+        padding: 15px 0 15px 31px;
+        flex-basis: auto;
     }
 }
 
@@ -613,8 +619,9 @@ body {
     justify-content: space-between;
     align-items: end;
     width: 100%;
-    padding: 10px 15px;
+    padding: 5px 15px;
     flex-direction: column;
+    text-align: center;
 
     li:first-child {
         order: 1;
@@ -716,7 +723,8 @@ body {
     .menuformenu {
         position: absolute;
         top: 55px;
-        left: 0px;
+        left: 50%;
+        transform: translateX(-50%);
         display: block;
         width: 85%;
         display: none;
@@ -740,7 +748,7 @@ body {
 
         @media screen and (min-width: 480px) {
             max-width: 300px;
-        width: 100%;
+            width: 100%;
         }
     }
 }
@@ -1006,7 +1014,7 @@ body {
 
     h1 {
         color: #2c2c2c;
-        font-size: 35px;
+        font-size: 32px;
         font-weight: 700;
         line-height: 49px;
         text-align: center;
@@ -1034,7 +1042,7 @@ body {
         letter-spacing: 0.1353846px;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         margin-top: 80px;
 
         h1 {
@@ -1113,7 +1121,7 @@ body {
 
 .popular_h2 {
     color: #2c2c2c;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 49px;
     letter-spacing: 0.16px;
@@ -1179,11 +1187,16 @@ body {
 
     h2 {
         color: #2c2c2c;
-        font-size: 43px;
+        font-size: 30px;
         font-weight: 700;
         line-height: 49px;
         letter-spacing: 0.16px;
-        padding: 80px 0 10px 0;
+        padding: 30px 0 10px 0;
+
+        @media screen and (min-width: 992px) {
+            font-size: 43px;
+            padding: 80px 0 10px 0;
+        }
     }
 
     p {
@@ -1198,7 +1211,7 @@ body {
 
 .block_pop2 {
     display: flex;
-    align-items: flex-start;
+    // align-items: flex-start;
     justify-content: center;
     align-content: space-between;
     flex-flow: row wrap;
@@ -1207,8 +1220,73 @@ body {
     .box_pop2 {
         width: 213px;
         text-align: left;
-        padding-bottom: 5px;
-        padding-right: 5px;
+        position: relative;
+        padding: 0 25px 15px 25px;
+        border-radius: 17px;
+        background: #ffffff;
+        margin-bottom: 10px;
+
+       
+
+        .hover_box {
+            position: absolute;
+
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            background-color: #ffffff;
+            z-index: 100;
+            padding: 0 25px 5px 25px;
+            border-radius: 0 0 17px 17px;
+            box-shadow: 0px 39px 35px 6px rgba(13, 71, 161, 0.56);
+
+            height: 0;
+            visibility: hidden;
+            overflow: hidden;
+
+
+            p {
+                color: #2c2c2c;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0.08615382px;
+                padding-top: 15px;
+            }
+
+            .buttonbox {
+                align-items: flex-start;
+                display: inline-flex;
+                padding-top: 10px;
+                justify-content: space-between;
+            }
+
+            .in_busket {
+                color: #ffffff;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 18px;
+                text-align: center;
+                border-radius: 6px;
+                background: #2962ff;
+                border: none;
+                padding: 17px 10px;
+                width: 150px;
+            }
+
+            .like {
+                border-radius: 6px;
+                border: solid 1px #0d47a1;
+                background-image: url(../img/heart.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                padding: 25px 10px;
+                width: 52px;
+                height: 52px;
+                background-color: transparent;
+            }
+        }
 
         .img_box {
             img {
@@ -1234,14 +1312,30 @@ body {
             letter-spacing: 0.1107692px;
             width: 191px;
         }
+
+        &:hover {
+            box-shadow: 0px 6px 36px 6px rgba(13, 71, 161, 0.56);
+
+            .hover_box {
+                animation: anim .4s linear alternate;
+                animation-fill-mode: forwards;
+            }
+        }
     }
 
     @media screen and (min-width: 992px) {
         justify-content: space-between;
-        padding: 0px 30px;
-
+    }
+    @keyframes anim {   
+        100% {
+            height: 200px;
+            visibility: visible;
+            overflow: initial;
+        }
     }
 }
+
+
 
 .slider_nike {
     text-align: center;
@@ -1253,11 +1347,11 @@ body {
         line-height: 49px;
         letter-spacing: 0.16px;
 
-        margin: 45px 0 30px 0;
+        margin: 35px 0 30px 0;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 992px) {
             font-size: 43px;
-            margin: 85px 0 40px 0;
+            margin: 65px 0 40px 0;
         }
     }
 
@@ -1349,7 +1443,7 @@ body {
 
     h2 {
         color: #2c2c2c;
-        font-size: 43px;
+        font-size: 30px;
         font-weight: 700;
         line-height: 49px;
         text-align: center;
@@ -1368,9 +1462,10 @@ body {
         margin-bottom: 27px;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         h2 {
             margin: 95px 0 10px 0;
+            font-size: 43px;
         }
 
         span {
@@ -1605,8 +1700,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     padding: 50px 0;
+    flex-wrap: wrap;
+    flex-direction: row;
 
     .box {
         max-width: 280px;
@@ -1636,7 +1732,7 @@ body {
         }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 992px) {
         justify-content: space-between;
         flex-direction: row;
         align-items: flex-start;

@@ -436,6 +436,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .bg_top2 .container {
@@ -620,8 +622,9 @@ body {
 }
 
 .telephone {
-  padding: 15px 0;
-  padding-left: 31px;
+  padding: 10px 0 10px 31px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .telephone h2 {
@@ -661,6 +664,14 @@ body {
 
 @media screen and (min-width: 768px) {
   .telephone {
+    -ms-flex-preferred-size: 27%;
+        flex-basis: 27%;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .telephone {
+    padding: 15px 0 15px 31px;
     -ms-flex-preferred-size: auto;
         flex-basis: auto;
   }
@@ -707,11 +718,12 @@ body {
       -ms-flex-align: end;
           align-items: end;
   width: 100%;
-  padding: 10px 15px;
+  padding: 5px 15px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
 }
 
 .menu_top2 li:first-child {
@@ -820,7 +832,9 @@ body {
 .menu_top2 .catalogMenu .menuformenu {
   position: absolute;
   top: 55px;
-  left: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: block;
   width: 85%;
   display: none;
@@ -1137,7 +1151,7 @@ body {
 
 .txtBlock h1 {
   color: #2c2c2c;
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 49px;
   text-align: center;
@@ -1163,7 +1177,7 @@ body {
   letter-spacing: 0.1353846px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .txtBlock {
     margin-top: 80px;
   }
@@ -1254,7 +1268,7 @@ body {
 
 .popular_h2 {
   color: #2c2c2c;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 49px;
   letter-spacing: 0.16px;
@@ -1333,11 +1347,18 @@ body {
 
 .popular2 h2 {
   color: #2c2c2c;
-  font-size: 43px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 49px;
   letter-spacing: 0.16px;
-  padding: 80px 0 10px 0;
+  padding: 30px 0 10px 0;
+}
+
+@media screen and (min-width: 992px) {
+  .popular2 h2 {
+    font-size: 43px;
+    padding: 80px 0 10px 0;
+  }
 }
 
 .popular2 p {
@@ -1353,9 +1374,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1371,8 +1389,81 @@ body {
 .block_pop2 .box_pop2 {
   width: 213px;
   text-align: left;
-  padding-bottom: 5px;
-  padding-right: 5px;
+  position: relative;
+  padding: 0 25px 15px 25px;
+  border-radius: 17px;
+  background: #ffffff;
+  margin-bottom: 10px;
+}
+
+.block_pop2 .box_pop2 .hover_box {
+  position: absolute;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: #ffffff;
+  z-index: 100;
+  padding: 0 25px 5px 25px;
+  border-radius: 0 0 17px 17px;
+  -webkit-box-shadow: 0px 39px 35px 6px rgba(13, 71, 161, 0.56);
+          box-shadow: 0px 39px 35px 6px rgba(13, 71, 161, 0.56);
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.block_pop2 .box_pop2 .hover_box p {
+  color: #2c2c2c;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08615382px;
+  padding-top: 15px;
+}
+
+.block_pop2 .box_pop2 .hover_box .buttonbox {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding-top: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.block_pop2 .box_pop2 .hover_box .in_busket {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 6px;
+  background: #2962ff;
+  border: none;
+  padding: 17px 10px;
+  width: 150px;
+}
+
+.block_pop2 .box_pop2 .hover_box .like {
+  border-radius: 6px;
+  border: solid 1px #0d47a1;
+  background-image: url(../img/heart.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 25px 10px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
 }
 
 .block_pop2 .box_pop2 .img_box img {
@@ -1398,12 +1489,39 @@ body {
   width: 191px;
 }
 
+.block_pop2 .box_pop2:hover {
+  -webkit-box-shadow: 0px 6px 36px 6px rgba(13, 71, 161, 0.56);
+          box-shadow: 0px 6px 36px 6px rgba(13, 71, 161, 0.56);
+}
+
+.block_pop2 .box_pop2:hover .hover_box {
+  -webkit-animation: anim .4s linear alternate;
+          animation: anim .4s linear alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 @media screen and (min-width: 992px) {
   .block_pop2 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 0px 30px;
+  }
+}
+
+@-webkit-keyframes anim {
+  100% {
+    height: 200px;
+    visibility: visible;
+    overflow: initial;
+  }
+}
+
+@keyframes anim {
+  100% {
+    height: 200px;
+    visibility: visible;
+    overflow: initial;
   }
 }
 
@@ -1417,13 +1535,13 @@ body {
   font-weight: 700;
   line-height: 49px;
   letter-spacing: 0.16px;
-  margin: 45px 0 30px 0;
+  margin: 35px 0 30px 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .slider_nike h2 {
     font-size: 43px;
-    margin: 85px 0 40px 0;
+    margin: 65px 0 40px 0;
   }
 }
 
@@ -1532,7 +1650,7 @@ body {
 
 .alldaysBlock h2 {
   color: #2c2c2c;
-  font-size: 43px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 49px;
   text-align: center;
@@ -1551,9 +1669,10 @@ body {
   margin-bottom: 27px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .alldaysBlock h2 {
     margin: 95px 0 10px 0;
+    font-size: 43px;
   }
   .alldaysBlock span {
     margin-bottom: 37px;
@@ -1816,11 +1935,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   padding: 50px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .fourboxes .box {
@@ -1851,7 +1972,7 @@ body {
   letter-spacing: 0.09846151px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .fourboxes {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;

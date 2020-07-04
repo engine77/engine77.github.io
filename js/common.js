@@ -114,27 +114,36 @@ swiper3.on('click', function (e) {
 
 });
 
-let button_for_Ul_menu = document.querySelector(".button_for_Ul_menu");
-if (button_for_Ul_menu) {
-    button_for_Ul_menu.addEventListener("click", e => {
-        if (document.body.clientWidth < 768) {
-            let x = document.querySelector(".ul_top");
-            x.style.display = x.style.display === 'block' ? 'none' : 'block';
-        }
+document.addEventListener("click", function (e) {
+    button_for_Ul_menu(e);
+    catalogMenu(e);
+})
 
-    })
+function button_for_Ul_menu(e) {
+    e.preventDefault();
+    let button_for_Ul_menu = document.querySelector(".button_for_Ul_menu");
+    let Ul_menu = document.querySelector(".ul_top");
+
+    if (e.target.closest(".button_for_Ul_menu")) {
+        Ul_menu.style.display = Ul_menu.style.display === 'block' ? 'none' : 'block';
+    } else if (!e.target.closest(".ul_top")) {
+        Ul_menu.style.display = 'none';
+    }
 }
 
-let catalogMenu = document.querySelector(".catalogMenu");
-if (catalogMenu) {
-    catalogMenu.addEventListener("click", e => {
+function catalogMenu(e) {
+    e.preventDefault();
+    let catalogMenu = document.querySelector("#buttonBurger");
+    let x = document.querySelector(".menuformenu");
 
-        let x = document.querySelector(".menuformenu");
+    if (e.target.closest("#buttonBurger")) {
         x.style.display = x.style.display === 'block' ? 'none' : 'block';
-
-
-    })
+    } else if (!e.target.closest(".menuformenu")) {
+        x.style.display = 'none';
+    }  
 }
+
+
 
 // document.querySelector(".header_mobile_button").addEventListener("click", function (e) {
 //     let mobmenu = document.querySelector(".header_mobile");
@@ -169,10 +178,6 @@ if (tabsButtons) {
         }
     });
 }
-
-
-
-
 
 
 let price_and_total = document.querySelector(".price_and_total .number");
