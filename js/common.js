@@ -120,11 +120,11 @@ document.addEventListener("click", function (e) {
 })
 
 function button_for_Ul_menu(e) {
-    e.preventDefault();
     let button_for_Ul_menu = document.querySelector(".button_for_Ul_menu");
     let Ul_menu = document.querySelector(".ul_top");
 
     if (e.target.closest(".button_for_Ul_menu")) {
+            e.preventDefault();
         Ul_menu.style.display = Ul_menu.style.display === 'block' ? 'none' : 'block';
     } else if (!e.target.closest(".ul_top")) {
         Ul_menu.style.display = 'none';
@@ -132,11 +132,11 @@ function button_for_Ul_menu(e) {
 }
 
 function catalogMenu(e) {
-    e.preventDefault();
     let catalogMenu = document.querySelector("#buttonBurger");
     let x = document.querySelector(".menuformenu");
 
     if (e.target.closest("#buttonBurger")) {
+            e.preventDefault();
         x.style.display = x.style.display === 'block' ? 'none' : 'block';
     } else if (!e.target.closest(".menuformenu")) {
         x.style.display = 'none';

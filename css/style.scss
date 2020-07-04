@@ -940,9 +940,9 @@ body {
         display: none;
     }
 
-    button {
+    a {
+        display: inline-block;
         width: 120px;
-        height: 30px;
         box-shadow: 0px 11px 17px rgba(255, 202, 40, 0.38);
         border-radius: 6px;
         background: #ffca28;
@@ -953,13 +953,10 @@ body {
         text-align: center;
         letter-spacing: 0.3600002px;
         border: none;
+        padding:  15px 0;
     }
 
-    @media screen and (min-width: 480px) {
-        button {
-            height: 52px;
-        }
-    }
+   
 
     @media screen and (min-width: 768px) {
         top: 40px;
@@ -977,7 +974,7 @@ body {
             display: inherit;
         }
 
-        button {
+        a {
             font-size: 14px;
             width: 155px;
         }
@@ -991,7 +988,7 @@ body {
             line-height: 62px;
         }
 
-        button {
+        a {
             font-size: 18px;
             width: 248px;
         }
@@ -1355,7 +1352,7 @@ body {
         }
     }
 
-    button {
+    a {
         color: #ffffff;
 
         font-size: 16px;
@@ -1546,8 +1543,8 @@ body {
     }
 
     input:checked~label:before,
-    &:not(:checked)>label:hover:before,
-    &:not(:checked)>label:hover~label:before {
+    &:not(:checked) +label:hover:before,
+    &:not(:checked)+ label:hover~label:before {
         color: #f4c52c;
 
     }

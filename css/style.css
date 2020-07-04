@@ -1080,9 +1080,9 @@ body {
   display: none;
 }
 
-.sliderTxt button {
+.sliderTxt a {
+  display: inline-block;
   width: 120px;
-  height: 30px;
   -webkit-box-shadow: 0px 11px 17px rgba(255, 202, 40, 0.38);
           box-shadow: 0px 11px 17px rgba(255, 202, 40, 0.38);
   border-radius: 6px;
@@ -1094,12 +1094,7 @@ body {
   text-align: center;
   letter-spacing: 0.3600002px;
   border: none;
-}
-
-@media screen and (min-width: 480px) {
-  .sliderTxt button {
-    height: 52px;
-  }
+  padding: 15px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -1118,7 +1113,7 @@ body {
     line-height: 22px;
     display: inherit;
   }
-  .sliderTxt button {
+  .sliderTxt a {
     font-size: 14px;
     width: 155px;
   }
@@ -1132,7 +1127,7 @@ body {
     font-size: 54px;
     line-height: 62px;
   }
-  .sliderTxt button {
+  .sliderTxt a {
     font-size: 18px;
     width: 248px;
   }
@@ -1545,7 +1540,7 @@ body {
   }
 }
 
-.slider_nike button {
+.slider_nike a {
   color: #ffffff;
   font-size: 16px;
   font-weight: 400;
@@ -1559,7 +1554,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .slider_nike button {
+  .slider_nike a {
     margin-top: 40px;
   }
 }
@@ -1774,8 +1769,8 @@ body {
 }
 
 .rating input:checked ~ label:before,
-.rating:not(:checked) > label:hover:before,
-.rating:not(:checked) > label:hover ~ label:before {
+.rating:not(:checked) + label:hover:before,
+.rating:not(:checked) + label:hover ~ label:before {
   color: #f4c52c;
 }
 
